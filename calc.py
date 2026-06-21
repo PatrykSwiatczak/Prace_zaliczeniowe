@@ -1,0 +1,42 @@
+import sys
+
+def usage(program_name):
+    print(f"Usage: {program_name} number1 operation number2\n")
+    print("Available operations:")
+    print("\tadd")
+    print("\tsub")
+    print("\tmul")
+
+
+def main():
+    if len(sys.argv) == 4:
+        try:
+            number1 = int(sys.argv[1])
+            number2 = int(sys.argv[3])
+            operation = sys.argv[2]
+
+            if operation == "add":
+                result = number1 + number2
+                print(f"{number1} + {number2} = {result}")
+                return
+
+            elif operation == "sub":
+                result = number1 - number2
+                print(f"{number1} - {number2} = {result}")
+                return
+
+            elif operation == "mul":
+                result = number1 * number2
+                print(f"{number1} * {number2} = {result}")
+                return
+
+        except ValueError:
+            pass
+
+    usage(sys.argv[0])
+
+
+if __name__ == "__main__":
+    main()
+
+    # python calc.py 5 add 6
