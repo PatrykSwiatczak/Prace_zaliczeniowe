@@ -1,0 +1,51 @@
+while True:
+    text = input("Enter text: \n")
+
+    # Jeśli użytkownik wcisnął sam Enter → kończymy program
+    if text == "":
+        break
+
+    print(text)
+
+    # Zamiana na małe litery
+    lower_text = text.lower()
+    print(lower_text)
+
+    # Zamiana na duże litery (z tego co jest aktualnie w lower_text)
+    upper_text = lower_text.upper()
+    print(upper_text)
+
+    # Długość tekstu
+    print(len(text))
+    print("----------\n")
+
+
+
+def to_lower(text):
+    return text.lower()
+
+def to_upper(text):
+    return text.upper()
+
+def text_size(text):
+    return len(text)
+
+def main():
+    while True:
+        text = input("Enter text: \n")
+
+        if text == "":          # pusty enter = koniec
+            break
+
+        print(text)
+
+        lower = to_lower(text)
+        print(lower)
+
+        upper = to_upper(lower)   # tak jak w C - najpierw lower, potem upper
+        print(upper)
+
+        print(text_size(text))
+        print("----------\n")
+if __name__ == "__main__":
+    main()
